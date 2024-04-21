@@ -7,7 +7,7 @@ interface Props {
 	chakra: number
 }
 
-export default function Card({ chakra, description, title }: Props) {
+export default function Card({ chakra, title }: Props) {
 	const { setAbilitiesList, setChakra, chakra: totalChakra } = useHabilities()
 
 	function handleDeleteFromStorage() {

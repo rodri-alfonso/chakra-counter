@@ -7,7 +7,7 @@ interface Props {
 	onClick?: () => void
 }
 
-export default function Layout({ children, label, onClick }: Props) {
+export default function Layout({ children, onClick }: Props) {
 	const { setChakra, baseChakra } = useHabilities()
 
 	function handleUpdateChakra() {

@@ -1,11 +1,10 @@
-import { useState } from 'react'
 import { useHabilities } from '../context/habilities'
 import { setBaseChakra as setBaseChakraStorage } from '../utils/store'
 
 export default function ChakraSelector() {
-	const { baseChakra, setBaseChakra, setChakra, chakra } = useHabilities()
+	const { setBaseChakra, setChakra, chakra } = useHabilities()
 
-	function handleSaveBaseChakra(e) {
+	function handleSaveBaseChakra(e: React.FocusEvent<HTMLInputElement>) {
 		e.preventDefault()
 		setChakra(Number(e.target.value))
 		setBaseChakraStorage(Number(e.target.value))

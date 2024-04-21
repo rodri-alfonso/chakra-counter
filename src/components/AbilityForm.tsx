@@ -5,14 +5,18 @@ interface Props {
 	onCloseForm?: () => void
 }
 
-const FormBox = ({ children }) => {
+interface PropsComponent {
+	children: React.ReactNode | React.ReactNode[]
+}
+
+const FormBox = ({ children }: PropsComponent) => {
 	return <div className='grid gap-1'>{children}</div>
 }
 
 export default function AbilityForm({ onCloseForm = () => {} }: Props) {
 	const [title, setTitle] = useState('')
 	const [description, setDescription] = useState('')
-	const [chakra, setChakra] = useState()
+	const [chakra, setChakra] = useState(0)
 	const { setNewAbility } = useHabilities()
 
 	const handleSubmit = (event: React.FormEvent) => {
